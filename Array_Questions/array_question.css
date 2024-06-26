@@ -60,3 +60,54 @@ p {
       padding: 0.25em 0.75em;
     }
   }
+
+
+  /* Css For code Blocks */
+
+  .styled-code {
+    background-color: white;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.styled-text {
+    color: #000000;
+}
+
+.product {
+    color: #0000FF;
+}
+
+.property {
+    color: #008000;
+}
+
+.value {
+    color: #0000FF;
+}
+
+.instock {
+    color: #0000FF;
+}
+
+.notinstock {
+    color: #FF0000;
+}
+
+.comment {
+    color: #808080;
+}
+
+.method {
+    color: #0000FF;
+}
+
+
+
+
+.run{
+  padding: 5px;
+  background-color: #051923;
+  color: white;
+  border-radius: 5px;
+}

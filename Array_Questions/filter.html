@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="array_question.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="array_question.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Here You Will Learn about All Array Methods and more...</h1>
+      <h1>Here You Will Learn about Filter array Method</h1>
     </header>
     <main>
-       
+      <pre class="styled-code">
+        <code class="styled-text">
+        const products = [
+        <span class="product">{</span> title: <span class="property">"Mobiles"</span>, price: <span class="value">600</span>, instock: <span class="instock">true</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Laptops"</span>, price: <span class="value">1200</span>, instock: <span class="instock">true</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Smart Watches"</span>, price: <span class="value">300</span>, instock: <span class="notinstock">false</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"4K TV"</span>, price: <span class="value">800</span>, instock: <span class="notinstock">false</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Bluetooth Speakers"</span>, price: <span class="value">100</span>, instock: <span class="instock">true</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Gaming Consoles"</span>, price: <span class="value">500</span>, instock: <span class="instock">true</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Digital Cameras"</span>, price: <span class="value">700</span>, instock: <span class="notinstock">false</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Tablets"</span>, price: <span class="value">400</span>, instock: <span class="notinstock">false</span> <span class="product">}</span>,
+        <span class="product">{</span> title: <span class="property">"Smart Home Devices"</span>, price: <span class="value">250</span>, instock: <span class="instock">true</span> <span class="product">}</span>
+        ];
+    
+        <span class="comment">// Filter products that are in stock</span>
+        const instockProducts = products.<span class="method">filter</span>(item => item.instock);
+    
+       <button class="run"> Click to See result</button>
+        </code>
+        </pre>
     </main>
     <script src="/index.js"></script>
-    
-</body>
+  </body>
 </html>
