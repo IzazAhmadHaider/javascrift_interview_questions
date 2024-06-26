@@ -12,6 +12,7 @@ When contributing to this repository, please adhere to the following guidelines:
 - Ensure your contributions are clear and concise.
 - Provide detailed explanations for each question and answer.
 - Format your code properly and check for errors before submitting.
+- Use only font-faimly Saira-Condenesed.
 
 Thank you for your contributions!
 
