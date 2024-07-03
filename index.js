@@ -1,41 +1,31 @@
-const numbers = [2, 9, 3, 5, 7, 8, 1];
-const targetSum = 6;
+const numbers = [2, 4, 3, 5, 7, 8, 1, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 4];
+const targetSum = 8;
 const result = findPairs(numbers, targetSum);
 console.log(result);
 
 function findPairs(arr, total) {
   let result = [];
-  let diffvalue = new Set()
+  let seen = new Set();
+  let seenPairs = new Set();
+
   for (let i = 0; i < arr.length; i++) {
-    let istvalue = arr[i];
+    let current = arr[i];
+    let complement = total - current;
 
-    for (let i = 0; i < arr.length; i++) {
-      let sndvalue = arr[i];
+    if (seen.has(complement)) {
+      let pair = [current, complement].sort(); 
+      let pairKey = pair.toString();
+      console.log(pairKey);
 
-      let finalvalue = sndvalue + istvalue;
-
-      total == finalvalue ? result.push([istvalue, sndvalue]) : null;
+      if (!seenPairs.has(pairKey)) {
+        result.push(pair);
+        seenPairs.add(pairKey);
+      }
     }
+
+    seen.add(current);
   }
 
   return result;
 }
 
-
-
-// function findPairs(arr, total) {
-//   let result = [];
-//   let seen = new Set();
-
-//   for (let i = 0; i < arr.length; i++) {
-//       let el = arr[i];
-//       let complement = total - el;
-
-//       if (seen.has(complement)) {
-//           result.push([complement, el]);
-//       }
-//       seen.add(el);
-//   }
-
-//   return result;
-// }
