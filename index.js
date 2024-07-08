@@ -112,28 +112,55 @@ const modificationOfArray = (arr) => {
   console.log(arr);
   const pushedArr = arr;
   pushedArr.push(8);
-  console.log(pushedArr);
+  // console.log(pushedArr);
 
   const filteredArr = pushedArr.filter((pushedArr) => {
     return pushedArr != 3;
   });
-  console.log(filteredArr);
+  // console.log(filteredArr);
 
   const changevalueArr = filteredArr;
   changevalueArr[0] = 100;
 
-  console.log(changevalueArr);
+  // console.log(changevalueArr);
 
   changevalueArr.forEach((element, index, array) => {
-    console.log(element)
-     array[index] =element * element;
+    console.log(element);
+    array[index] = element * element;
   });
 
-  console.log(changevalueArr);
+  // console.log(changevalueArr);
 };
 
-console.log(modificationOfArray(numberforQ4));
-
-
+// console.log(modificationOfArray(numberforQ4));
 
 // ----------------------------------------------------------------//
+
+// Interview Question No. 5:
+
+/* Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "". */
+
+
+
+let strs = ["flower","flow","flight"];
+
+var longestCommonPrefix = function (strs) {
+  if (strs.length <=0) return ""; 
+  let istel = strs[0];
+
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(istel) !== 0) {
+      istel = istel.substring(0, istel.length - 1);
+      if (istel === "") return "";
+    }
+  }
+  return istel;
+};
+
+
+
+
+
+// console.log(longestCommonPrefix(strs));
