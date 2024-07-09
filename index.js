@@ -142,12 +142,10 @@ const modificationOfArray = (arr) => {
 
 If there is no common prefix, return an empty string "". */
 
-
-
-let strs = ["flower","flow","flight"];
+let strs = ["flower", "flow", "flight"];
 
 var longestCommonPrefix = function (strs) {
-  if (strs.length <=0) return ""; 
+  if (strs.length <= 0) return "";
   let istel = strs[0];
 
   for (let i = 1; i < strs.length; i++) {
@@ -159,8 +157,42 @@ var longestCommonPrefix = function (strs) {
   return istel;
 };
 
-
-
-
-
 // console.log(longestCommonPrefix(strs));
+
+// ----------------------------------------------------------------//
+
+// Interview Question No. 5:
+
+/*
+Write a Function which takes a string and returns boolean if starting paranthesis have corresponding closing paranthesis .
+ */
+
+var isValid = function (s) {
+  const arr = [];
+  const corresponding_paranthesis = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  for (let i of s) {
+    if (i === "(" || i === "[" || i === "{") {
+      arr.push(i);
+    } else if (i === ")" || i === "}" || i === "]") {
+      let lastvalue = arr.pop();
+
+      if (i !==corresponding_paranthesis[lastvalue]) {
+        return false;
+        
+      }
+    }
+  }
+  return arr.length ===0;
+};
+
+
+
+// console.log(isValid("()"))
+// console.log(isValid("(){}[]"))
+// console.log(isValid("(]){"))
+// console.log(isValid("({[]})"))
