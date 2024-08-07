@@ -181,18 +181,82 @@ var isValid = function (s) {
     } else if (i === ")" || i === "}" || i === "]") {
       let lastvalue = arr.pop();
 
-      if (i !==corresponding_paranthesis[lastvalue]) {
+      if (i !== corresponding_paranthesis[lastvalue]) {
         return false;
-        
       }
     }
   }
-  return arr.length ===0;
+  return arr.length === 0;
 };
-
-
 
 // console.log(isValid("()"))
 // console.log(isValid("(){}[]"))
 // console.log(isValid("(]){"))
 // console.log(isValid("({[]})"))
+
+// ----------------------------------------------------------------//
+
+// Interview Question No. 6:
+
+let list1 = [1, 2, 4];
+let list2 = [1, 3, 4];
+
+var mergeTwoLists = function (list1, list2) {
+  const list3 = [...list1, ...list2];
+  return list3.sort();
+};
+
+// console.log( mergeTwoLists(list1, list2))
+
+// -----------------------------------------------------------------//
+
+// Interview Question No. 7:
+
+// Question: How would you remove duplicate elements from an array in JavaScript? Can you provide multiple methods to achieve this?
+
+const array = [1, 2, 3, 4, 4, 5, 6, 1, 2];
+const uniqueArray = array.filter((val, i, self) => self.indexOf(val) === i);
+// console.log(uniqueArray);
+
+// 2nd Method
+
+const newarr = [...new Set(array)];
+
+// console.log(newarr)
+
+// -----------------------------------------------------------------//
+
+// Interview Question No. 7:
+
+// Write a function called findPairsWithSum that takes an array of integers and a target sum as arguments and returns all unique pairs of integers in the array that add up to the target sum. Each pair should be returned as an array, and the function should return an array of these pairs. Ensure that each pair is unique and the order of the pairs does not matter.
+
+// Input: [1, 2, 3, 4, 3, 5], 6
+// Output: [[1, 5], [2, 4], [3, 3]]
+
+const inputArray = [1, 2, 3, 4, 3, 5 ,1];
+const target2 = 6;
+
+function findPairsWithSum(input, target) {
+  const matchedpairs = [];
+  const seen = new Set();
+
+  input.forEach((current) => {
+    const complement = target - current;
+
+    if (seen.has(complement)) {
+      const pair = [complement, current].sort((a, b) =>(a - b));
+      if (!matchedpairs.some(existingPair => existingPair[0] === pair[0] && existingPair[1] === pair[1])) {
+        
+        matchedpairs.push(pair);
+      }
+    }
+
+    seen.add(current);
+  });
+  return matchedpairs;
+}
+
+
+const targetvall=findPairsWithSum(inputArray ,target2);
+
+// console.log(targetvall)
